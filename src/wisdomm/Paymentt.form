@@ -314,7 +314,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cambria" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="No. of  Subject   :-"/>
+            <Property name="text" type="java.lang.String" value="No. of  Subject   "/>
           </Properties>
         </Component>
         <Component class="datechooser.beans.DateChooserCombo" name="dateChooserCombo2">
@@ -324,7 +324,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cambria" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Date                     :-"/>
+            <Property name="text" type="java.lang.String" value="Date                     "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
@@ -385,7 +385,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cambria" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Discount             :-"/>
+            <Property name="text" type="java.lang.String" value="Discount             "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField7">
@@ -511,7 +511,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cambria" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Teacher Name  :-"/>
+            <Property name="text" type="java.lang.String" value="Teacher Name  "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
@@ -519,7 +519,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cambria" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="No. of  Subject   :-"/>
+            <Property name="text" type="java.lang.String" value="No. of  Subject   "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
@@ -527,7 +527,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cambria" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Date                     :-"/>
+            <Property name="text" type="java.lang.String" value="Date                     "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField1">
@@ -545,7 +545,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cambria" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Amount               :-"/>
+            <Property name="text" type="java.lang.String" value="Amount               "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField3">
@@ -587,7 +587,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cambria" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Incentive            :-"/>
+            <Property name="text" type="java.lang.String" value="Incentive            "/>
           </Properties>
         </Component>
       </SubComponents>

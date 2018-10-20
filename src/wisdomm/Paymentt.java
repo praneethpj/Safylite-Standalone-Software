@@ -149,10 +149,10 @@ public class Paymentt extends javax.swing.JFrame {
         jLabel1.setText("Student Payment");
 
         jLabel7.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
-        jLabel7.setText("No. of  Subject   :-");
+        jLabel7.setText("No. of  Subject   ");
 
         jLabel8.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
-        jLabel8.setText("Date                     :-");
+        jLabel8.setText("Date                     ");
 
         jButton3.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
         jButton3.setText("Print Slip");
@@ -195,7 +195,7 @@ public class Paymentt extends javax.swing.JFrame {
         jLabel10.setText("Student Name   ");
 
         jLabel11.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
-        jLabel11.setText("Discount             :-");
+        jLabel11.setText("Discount             ");
 
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -292,13 +292,13 @@ public class Paymentt extends javax.swing.JFrame {
         jLabel2.setText("Teacher Payment");
 
         jLabel3.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
-        jLabel3.setText("Teacher Name  :-");
+        jLabel3.setText("Teacher Name  ");
 
         jLabel4.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
-        jLabel4.setText("No. of  Subject   :-");
+        jLabel4.setText("No. of  Subject   ");
 
         jLabel5.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
-        jLabel5.setText("Date                     :-");
+        jLabel5.setText("Date                     ");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -313,7 +313,7 @@ public class Paymentt extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
-        jLabel6.setText("Amount               :-");
+        jLabel6.setText("Amount               ");
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -344,7 +344,7 @@ public class Paymentt extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
-        jLabel12.setText("Incentive            :-");
+        jLabel12.setText("Incentive            ");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
