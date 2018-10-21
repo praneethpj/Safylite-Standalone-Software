@@ -1,6 +1,8 @@
 package wisdomm;
 
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
+import java.util.regex.Pattern;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
@@ -53,6 +55,8 @@ public class Registration extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jSeparator11 = new javax.swing.JSeparator();
         jSeparator12 = new javax.swing.JSeparator();
+        jLabel36 = new javax.swing.JLabel();
+        jSeparator13 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -73,8 +77,13 @@ public class Registration extends javax.swing.JFrame {
         grade = new javax.swing.JTextField();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
-        mo = new javax.swing.JTextField();
+        city = new javax.swing.JTextField();
         Username = new javax.swing.JTextField();
+        nic = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        tel = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        mo = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -144,9 +153,9 @@ public class Registration extends javax.swing.JFrame {
         jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 70, 10));
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel28.setText("Address");
-        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 520, -1, -1));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 540, 60, 10));
+        jLabel28.setText("NIC");
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 520, -1, -1));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 30, 10));
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel29.setText("Date of Birth");
@@ -159,14 +168,19 @@ public class Registration extends javax.swing.JFrame {
         jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 90, 10));
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel35.setText("Mobile no.");
-        jPanel1.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, -1, -1));
+        jLabel35.setText("Telephone no.");
+        jPanel1.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setText("User Name");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, -1, -1));
         jPanel1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 70, 10));
-        jPanel1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 500, 70, 10));
+        jPanel1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 500, 90, 10));
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel36.setText("Address");
+        jPanel1.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, -1, -1));
+        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 570, 60, 10));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 300, 670));
 
@@ -217,7 +231,7 @@ public class Registration extends javax.swing.JFrame {
                 ParentnameFocusLost(evt);
             }
         });
-        jPanel2.add(Parentname, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 300, -1));
+        jPanel2.add(Parentname, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 130, -1));
 
         jButton1.setText("Reset");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -303,7 +317,7 @@ public class Registration extends javax.swing.JFrame {
         address.setRows(5);
         jScrollPane1.setViewportView(address);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 300, 60));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 200, 60));
 
         jRadioButton1.setBackground(new java.awt.Color(51, 51, 51));
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -334,6 +348,59 @@ public class Registration extends javax.swing.JFrame {
         jPanel2.add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, -10, -1, -1));
         jPanel2.add(dateChooserCombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 300, -1));
 
+        city.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                cityMouseMoved(evt);
+            }
+        });
+        city.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cityFocusLost(evt);
+            }
+        });
+        jPanel2.add(city, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 570, 90, -1));
+
+        Username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsernameActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 300, -1));
+
+        nic.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                nicMouseMoved(evt);
+            }
+        });
+        nic.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                nicFocusLost(evt);
+            }
+        });
+        jPanel2.add(nic, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 300, -1));
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setText("City");
+        jPanel2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 550, -1, -1));
+
+        tel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                telMouseMoved(evt);
+            }
+        });
+        tel.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                telFocusLost(evt);
+            }
+        });
+        jPanel2.add(tel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 130, -1));
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel38.setText("Mobile no.");
+        jPanel2.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
+
         mo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 moMouseMoved(evt);
@@ -344,14 +411,7 @@ public class Registration extends javax.swing.JFrame {
                 moFocusLost(evt);
             }
         });
-        jPanel2.add(mo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 300, -1));
-
-        Username.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameActionPerformed(evt);
-            }
-        });
-        jPanel2.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 300, -1));
+        jPanel2.add(mo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 480, 100, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 400, 670));
         getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, -1, -1));
@@ -428,24 +488,73 @@ public class Registration extends javax.swing.JFrame {
         String lastname = lname.getText();
         String user = Username.getText();
         String password = String.valueOf(jPasswordField1.getPassword());
+        String Re_password = String.valueOf(jPasswordField2.getPassword());
         String School = scl.getText();
-        String rediotext = "";
+        String Gender = "";
         try {    
             if (jRadioButton1.isSelected()) {
-                rediotext = jRadioButton1.getText();
+                Gender = jRadioButton1.getText();
             }
             if (jRadioButton2.isSelected()) {
-                rediotext = jRadioButton2.getText();
+                Gender = jRadioButton2.getText();
             }
         } catch (Exception x) {
 
         }
         String Grade = grade.getText();
-        String date  = dateChooserCombo1.getText();
+        String dob  = dateChooserCombo1.getText();
         String parentname = Parentname.getText();
         String Mobile = mo.getText();
+        String telephone = tel.getText();
+        String NIC = nic.getText();
         String Address = address.getText();
+        String City = city.getText();
+        int Age=0;
+        int Activated=0;
+        String user_type="parent";
+        JOptionPane.showMessageDialog(Registration.this,dob);
+       if(!(firstname.isEmpty() || lastname.isEmpty() || user.isEmpty() || password.isEmpty() || Re_password.isEmpty() || School.isEmpty() || Gender.isEmpty() || Grade.isEmpty() || Grade.isEmpty() || dob.isEmpty() || parentname.isEmpty() || Mobile.isEmpty() || NIC.isEmpty() || Address.isEmpty() || City.isEmpty() || telephone.isEmpty())){ 
+            try{
+             String encryptedPassword = AESCrypt.encrypt(password);
+             Statement stmt = new DBConnector().getConnection().createStatement();
+             String query1 = "INSERT INTO student(first_name,last_name,gender,dob,school,barcode,age) VALUES('"+firstname+"','"+lastname+"','"+Gender+"','"+dob+"','"+School+"','"+encryptedPassword+"','"+Age+"')";
+             String query2="INSERT INTO user_account(user_name,user_type,password,activated) VALUES('"+user+"','"+user_type+"','"+ password+"','"+Activated+"')"; 
+             String query3="INSERT INTO parent(parent_name,adress_line1,city,mobile,telephone,nic) VALUES('"+parentname+"','"+Address+"','"+ City+"','"+Mobile+"','"+telephone+"','"+nic+"')"; 
+             
+         if (!(Mobile.charAt(0)=='0'&& Mobile.length()==10 && Mobile.matches("[0-9]+"))){
+             JOptionPane.showMessageDialog(null, "Invalid phone number");
+          
+         }else if(!(Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{5,15}$",jPasswordField1.getText()))){
+            JOptionPane.showMessageDialog(null,"Invalid password ,must containt simple & capital letters,minimum 1 number and minimum 5 letters");
+            
+         }else if(!(password.matches(Re_password))){
+             JOptionPane.showMessageDialog(null, "Password re-entered incorrectly");
+             
+         }else if (!(NIC.trim().matches("^[0-9]{9}[vVxX]$"))){
+             JOptionPane.showMessageDialog(null, "Invalid NIC");
+            
+         }else  {
+              stmt.executeUpdate(query1, Statement.RETURN_GENERATED_KEYS);
+             JOptionPane.showMessageDialog(null, "Registration Success !");
+            
+         }
+         
+         
+         
+         
+         
+         
+    
+     }catch(Exception e){
+                JOptionPane.showMessageDialog(rootPane,e.getMessage());
+        }
+
         
+        
+        
+       }else{
+        JOptionPane.showMessageDialog(this, "Please Add the fields");
+       }
         //javax.swing.JOptionPane.showMessageDialog(Registration.this,rediotext);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -550,6 +659,34 @@ public class Registration extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_gradeFocusLost
 
+    private void cityMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cityMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cityMouseMoved
+
+    private void cityFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cityFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cityFocusLost
+
+    private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UsernameActionPerformed
+
+    private void nicMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nicMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nicMouseMoved
+
+    private void nicFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nicFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nicFocusLost
+
+    private void telMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_telMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_telMouseMoved
+
+    private void telFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_telFocusLost
+
     private void moMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moMouseMoved
         // TODO add your handling code here:
     }//GEN-LAST:event_moMouseMoved
@@ -557,10 +694,6 @@ public class Registration extends javax.swing.JFrame {
     private void moFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_moFocusLost
         // TODO add your handling code here:
     }//GEN-LAST:event_moFocusLost
-
-    private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsernameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -578,6 +711,7 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JTextField Username;
     private javax.swing.JTextArea address;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextField city;
     private datechooser.beans.DateChooserCombo dateChooserCombo1;
     private javax.swing.JTextField fname;
     private javax.swing.JTextField grade;
@@ -604,6 +738,9 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -626,6 +763,7 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -636,7 +774,9 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextField lname;
     private javax.swing.JTextField mo;
+    private javax.swing.JTextField nic;
     private javax.swing.JTextField scl;
+    private javax.swing.JTextField tel;
     // End of variables declaration//GEN-END:variables
 
 }
